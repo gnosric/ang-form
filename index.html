@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://juampy72.github.io/angularjs_form/ -->
+<html lang="en" data-ng-app="myApp" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>AngularJS Form</title>
+    <script type="text/javascript" src="./AngularJS Form_files/angular.min.js"></script><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak{display:none;}ng\:form{display:block;}</style>
+    <script type="text/javascript" src="./AngularJS Form_files/promise-tracker.js"></script>
+    <script type="text/javascript" src="./AngularJS Form_files/app.js"></script>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+  </head>
+  <body class="container">
+  
+  <h2>AngularJs form</h2>
+
+  <p>This is an AngularJs based form. It uses a controller to handle form validation and submission.</p>
+  <p>Find a step by step tutorial on this form at <a href="https://www.lullabot.com/blog/article/processing-forms-angularjs">Blog</a>.</p>
+
+  <div data-ng-controller="help" class="ng-scope">
+    <div id="messages" class="alert alert-success ng-binding" data-ng-show="messages" data-ng-bind="messages" style="display: none;"></div>
+    <div data-ng-show="progress.active()" style="color: red; font-size: 50px; display: none;">Sending…</div>
+    <form name="helpForm" novalidate="" role="form" class="ng-pristine ng-invalid ng-invalid-required">
+      <div class="form-group">
+        <label for="name">Your Name </label>
+        <span class="label label-danger" data-ng-show="submitted &amp;&amp; helpForm.name.$error.required" style="display: none;">Required!</span>
+        <input type="text" name="name" data-ng-model="name" class="form-control ng-pristine ng-invalid ng-invalid-required" required="">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Your E-mail address</label>
+        <span class="label label-danger" data-ng-show="submitted &amp;&amp; helpForm.email.$error.required" style="display: none;">Required!</span>
+        <span class="label label-danger" data-ng-show="submitted &amp;&amp; helpForm.$error.email" style="display: none;">Invalid email!</span>
+        <input type="email" name="email" data-ng-model="email" class="form-control ng-pristine ng-invalid ng-invalid-required ng-valid-email" required="">  
+      </div>
+
+      <div class="form-group">
+        <label for="subjectList">What is the nature of your request?</label>
+        <span class="label label-danger" data-ng-show="submitted &amp;&amp; helpForm.subjectList.$error.required" style="display: none;">Required!</span>
+        <select name="subjectList" data-ng-model="subjectList" data-ng-options="id as value for (id, value) in subjectListOptions" class="form-control ng-pristine ng-invalid ng-invalid-required" required=""><option value="" class=""></option><option value="account">Account Problems</option><option value="bug">Report a Bug</option><option value="mobile">Mobile</option><option value="other">Other</option><option value="user">Report a Malicious User</option></select>
+      </div>
+
+      <div class="form-group">
+        <label for="url">URL of Relevant Page</label>
+        <span class="label label-danger" data-ng-show="submitted &amp;&amp; helpForm.$error.url" style="display: none;">Invalid URL format!</span>
+        <input type="url" name="url" data-ng-model="url" class="form-control ng-pristine ng-valid ng-valid-url">
+      </div>
+
+      <div class="form-group">
+        <label for="comments">Description</label>
+        <span class="label label-danger" data-ng-show="submitted &amp;&amp; helpForm.comments.$error.required" style="display: none;">Required!</span>
+        <textarea name="comments" data-ng-model="comments" class="form-control ng-pristine ng-invalid ng-invalid-required" required=""></textarea>
+      </div>
+
+      <button data-ng-disabled="progress.active()" data-ng-click="submit(helpForm)" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+
+  
+
+</body></html>

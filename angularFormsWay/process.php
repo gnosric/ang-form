@@ -26,6 +26,22 @@ $data           = array();      // array to pass back data
         // if there are no errors, return a message
         $data['success'] = true;
         $data['message'] = 'Success!';
+
+         $to = "rjung@boardvantage.com"; // this is your Email address
+    $from = $_POST['email']; // this is the sender's Email address
+    $name = $_POST['name'];
+    $superheroAlias = $_POST['superheroAlias'];
+    $subject = "Form submission";
+    $subject2 = "Copy of your form submission";
+    $message = $name . " wrote the following:" . "\n\n" . $_POST['superheroAlias'];
+    $message2 = "Here is a copy of your message " . $name . "\n\n" . $_POST['superheroAlias'];
+
+    $headers = "From:" . $from;
+    $headers2 = "From:" . $to;
+    mail($to,$subject,$message,$headers);
+    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+    echo "Mail Sent. Thank you " . $name . ", we will contact you shortly.";
+
     }
 
     // return all our data to an AJAX call

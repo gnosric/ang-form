@@ -10,6 +10,9 @@ $data           = array();      // array to pass back data
     if (empty($_POST['superheroAlias']))
         $errors['superheroAlias'] = 'Superhero alias is required.';
 
+    if (empty($_POST['email']))
+        $errors['email'] = 'Email is required.';
+
 // return a response ===========================================================
 
     // response if there are errors

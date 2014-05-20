@@ -80,6 +80,13 @@
       <span class="help-block" ng-show="errorSuperhero">{{ errorSuperhero }}</span>
     </div>
 
+        <!-- SUPERHERO NAME -->
+    <div id="email-group" class="form-group" ng-class="{ 'has-error' : errorEmail }">
+      <label>Superhero Alias</label>
+      <input type="text" name="email" class="form-control" placeholder="email" ng-model="formData.email">
+      <span class="help-block" ng-show="errorEmail">{{ errorEmail }}</span>
+    </div>
+
     <!-- SUBMIT BUTTON -->
     <button type="submit" name="submit" value="Submit" class="btn btn-success btn-lg btn-block">
       <span class="glyphicon glyphicon-flash"></span> Submit!

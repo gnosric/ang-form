@@ -16,7 +16,7 @@
   <div data-ng-controller="help">
     <div id="messages" class="alert alert-success" data-ng-show="messages" data-ng-bind="messages"></div>
     <div data-ng-show="progress.active()" style="color: red; font-size: 50px;">Sending&hellip;</div>
-    <form name="helpForm" novalidate role="form">
+    <form name="helpForm" novalidate role="form" action="ang_mail_handler.php" method="post">
       <div class="form-group">
         <label for="name">Your Name </label>
         <span class="label label-danger" data-ng-show="submitted && helpForm.name.$error.required">Required!</span>

@@ -16,8 +16,11 @@ $data           = array();      // array to pass back data
     if (empty($_POST['email']))
         $errors['email'] = 'Email is required.';
 
-     if (empty($_POST['phone']))
+    if (empty($_POST['phone']))
         $errors['phone'] = 'Phone is required.';
+
+    if (empty($_POST['comments']))
+        $errors['comments'] = 'Comments is required.';
 
 // return a response ===========================================================
 
@@ -39,10 +42,11 @@ $data           = array();      // array to pass back data
         $lastName = $_POST['lastName'];
         $company = $_POST['company'];
         $phone = $_POST['phone'];
+        $comments = $_POST['comments'];
         $subject = "Form submission";
         $subject2 = "Copy of your form submission";
-        $message = $firstName . " " . $lastName . " from " . $company . " wrote the following:" . "\n\n" . "Phone: " . $phone . "\n\n" . $_POST['company'];
-        $message2 = "Here is a copy of your message " . $name . "\n\n" . $_POST['company'];
+        $message = $firstName . " " . $lastName . " from " . $company . " wrote the following:" . "\n\n" . "Phone: " . $phone . "\n\n" . $_POST['comments'];
+        $message2 = "Here is a copy of your message " . $name . "\n\n" . $_POST['comments'];
 
         $headers = "From:" . $from;
         $headers2 = "From:" . $to;

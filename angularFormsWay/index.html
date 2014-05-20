@@ -98,9 +98,17 @@
 
         <!-- Phone NAME -->
     <div id="phone-group" class="form-group" ng-class="{ 'has-error' : errorPhone }">
-      <label>Email</label>
+      <label>Phone</label>
       <input type="text" name="phone" class="form-control" placeholder="phone" ng-model="formData.phone">
       <span class="help-block" ng-show="errorPhone">{{ errorPhone }}</span>
+    </div>
+
+        <!-- comments NAME -->
+    <div id="comments-group" class="form-group" ng-class="{ 'has-error' : errorComments }">
+      <label>Comments</label>
+      <textarea rows="10" cols="30" name="comments" class="form-control" placeholder="Anything we need to know?" ng-model="formData.comments"></textarea>
+      <!--<input type="text" name="comments" class="form-control" placeholder="Anything we need to know?" ng-model="formData.comments">-->
+      <span class="help-block" ng-show="errorComments">{{ errorComments }}</span>
     </div>
 
     <!-- SUBMIT BUTTON -->

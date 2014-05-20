@@ -41,6 +41,7 @@
                       $scope.errorLastName = data.errors.lastname;
                       $scope.errorCompany = data.errors.company;
                       $scope.errorEmail = data.errors.email;
+                      $scope.errorPhone = data.errors.phone;
                   } else {
                     // if successful, bind success message to message
                       $scope.message = data.message;
@@ -88,11 +89,18 @@
       <span class="help-block" ng-show="errorCompany">{{ errorCompany }}</span>
     </div>
 
-        <!-- email NAME -->
+        <!-- Email NAME -->
     <div id="email-group" class="form-group" ng-class="{ 'has-error' : errorEmail }">
       <label>Email</label>
       <input type="text" name="email" class="form-control" placeholder="email" ng-model="formData.email">
       <span class="help-block" ng-show="errorEmail">{{ errorEmail }}</span>
+    </div>
+
+        <!-- Phone NAME -->
+    <div id="phone-group" class="form-group" ng-class="{ 'has-error' : errorPhone }">
+      <label>Email</label>
+      <input type="text" name="phone" class="form-control" placeholder="phone" ng-model="formData.phone">
+      <span class="help-block" ng-show="errorPhone">{{ errorPhone }}</span>
     </div>
 
     <!-- SUBMIT BUTTON -->

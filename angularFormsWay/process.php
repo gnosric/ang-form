@@ -16,6 +16,9 @@ $data           = array();      // array to pass back data
     if (empty($_POST['email']))
         $errors['email'] = 'Email is required.';
 
+     if (empty($_POST['phone']))
+        $errors['phone'] = 'Phone is required.';
+
 // return a response ===========================================================
 
     // response if there are errors
@@ -28,16 +31,17 @@ $data           = array();      // array to pass back data
 
         // if there are no errors, return a message
         $data['success'] = true;
-        $data['message'] = 'Success!';
+        $data['message'] = 'Form Successfully Submitted!';
 
         $to = "rjung@boardvantage.com"; // this is your Email address
         $from = $_POST['email']; // this is the sender's Email address
         $firstName = $_POST['firstName'];
         $lastName = $_POST['lastName'];
         $company = $_POST['company'];
+        $phone = $_POST['phone'];
         $subject = "Form submission";
         $subject2 = "Copy of your form submission";
-        $message = $firstName . " " . $lastName . " from" . $company . " wrote the following:" . "\n\n" . $_POST['company'];
+        $message = $firstName . " " . $lastName . " from " . $company . " wrote the following:" . "\n\n" . "Phone: " . $phone . "\n\n" . $_POST['company'];
         $message2 = "Here is a copy of your message " . $name . "\n\n" . $_POST['company'];
 
         $headers = "From:" . $from;

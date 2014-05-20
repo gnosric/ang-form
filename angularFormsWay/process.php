@@ -4,11 +4,14 @@ $errors         = array();      // array to hold validation errors
 $data           = array();      // array to pass back data
 
 // validate the variables ======================================================
-    if (empty($_POST['name']))
-        $errors['name'] = 'Name is required.';
+    if (empty($_POST['firstName']))
+        $errors['firstName'] = 'First Name is required.';
 
-    if (empty($_POST['superheroAlias']))
-        $errors['superheroAlias'] = 'Superhero alias is required.';
+    if (empty($_POST['lastName']))
+        $errors['lastName'] = 'Last Name is required.';
+
+    if (empty($_POST['company']))
+        $errors['company'] = 'Company is required.';
 
     if (empty($_POST['email']))
         $errors['email'] = 'Email is required.';
@@ -29,12 +32,13 @@ $data           = array();      // array to pass back data
 
         $to = "rjung@boardvantage.com"; // this is your Email address
         $from = $_POST['email']; // this is the sender's Email address
-        $name = $_POST['name'];
-        $superheroAlias = $_POST['superheroAlias'];
+        $firstName = $_POST['firstName'];
+        $lastName = $_POST['lastName'];
+        $company = $_POST['company'];
         $subject = "Form submission";
         $subject2 = "Copy of your form submission";
-        $message = $name . " wrote the following:" . "\n\n" . $_POST['superheroAlias'];
-        $message2 = "Here is a copy of your message " . $name . "\n\n" . $_POST['superheroAlias'];
+        $message = $firstName . " " . $lastName . " from" . $company . " wrote the following:" . "\n\n" . $_POST['company'];
+        $message2 = "Here is a copy of your message " . $name . "\n\n" . $_POST['company'];
 
         $headers = "From:" . $from;
         $headers2 = "From:" . $to;
